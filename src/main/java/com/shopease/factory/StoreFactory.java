@@ -7,7 +7,7 @@ import com.shopease.model.Store;
 @Component
 public class StoreFactory {
 
-    public Store createStore(String name, String type) {
+    public static Store createStore(String name, String type) {
         switch (type.toUpperCase()) {
             case "PREMIUM":
                 return new PremiumStore(name);
