@@ -4,13 +4,23 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 
 // @DynamoDBTable(tableName = "Store") // → Si usaras DynamoDB real
+@Schema(description = "Represents a store entity")
 public class Store {
     
+    @Schema(description = "Unique identifier of the store", example = "e51ec63e-b6f6-457d-b671-5447045abdf6")
     private String id;
+
+    @Schema(description = "Name of the store", example = "Tech Store")
     private String name;
+    
+    @Schema(description = "Type of the store", example = "BASIC")
     private String storeType;
+
+    @Schema(description = "List of products available in the store")
     private List<Product> products = new ArrayList<>();
 
     public Store(){
